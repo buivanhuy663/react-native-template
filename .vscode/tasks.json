@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create New Screen",
+            "type": "shell",
+            "command": [
+                "chmod o+r ${cwd}/.template/create_new_page.sh;",
+                "${cwd}/.template/create_new_page.sh ${input:dir} ${input:ScreenName};",
+                "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}State.ts;",
+                "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}ViewModel.ts;",
+                "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}Reducer.ts;",
+                "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/${input:ScreenName}Screen.tsx;"
+            ],
+            "group": "test",
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "ScreenName",
+            "description": "Screen Name: ScreenName",
+            "default": "ReplacePascalCame",
+            "type": "promptString"
+        },
+        {
+            "id": "dir",
+            "description": "Directory: src/view/screens",
+            "default": "src/view/screens",
+            "type": "promptString"
+        }
+    ],
+}
