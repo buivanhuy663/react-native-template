@@ -5,8 +5,8 @@
             "label": "Create New Screen",
             "type": "shell",
             "command": [
-                "chmod o+r ${cwd}/.template/create_new_page.sh;",
-                "${cwd}/.template/create_new_page.sh ${input:dir} ${input:ScreenName};",
+                "chmod o+r ${cwd}/.template/create_new_screen.sh;",
+                "${cwd}/.template/create_new_screen.sh ${input:dir} ${input:ScreenName};",
                 "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}State.ts;",
                 "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}ViewModel.ts;",
                 "code -r ${workspaceFolder}/${input:dir}/${input:ScreenName}/redux/${input:ScreenName}Reducer.ts;",
